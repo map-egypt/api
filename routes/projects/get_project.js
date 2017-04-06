@@ -26,12 +26,7 @@ module.exports = [
              (!ret[0].private && ret[0].published) || // public and published
              (req.auth.isAuthenticated && ret[0].private && ret[0].published) // also show authorized, private, published
            ) {
-            const response = ret[0];
-            // secondary authentication check for removing disbursement data for non-logged in users
-            if (!req.auth.isAuthenticated && response.data) {
-              delete response.data.disbursed;
-            }
-            return res(response);
+            return res(ret[0]);
           } else {
             return res(Boom.unauthorized('Not authorized to perform this action'));
           }
