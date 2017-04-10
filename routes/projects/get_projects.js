@@ -18,6 +18,7 @@ module.exports = [
           db.raw('data->\'category\' as categories'),
           db.raw('data->\'responsible_ministry\' as responsible_ministry'),
           db.raw('data->\'budget\' as budget'),
+          db.raw('data->\'contract_date\' as contract_date'),
           db.raw('data->\'planned_start_date\' as planned_start_date'),
           db.raw('data->\'actual_start_date\' as actual_start_date'),
           db.raw('data->\'planned_end_date\' as planned_end_date'),
@@ -30,6 +31,8 @@ module.exports = [
           db.raw('data->\'location\' as location'),
           db.raw('data->\'local_manager\' as local_manager'),
           db.raw('data->\'local_manager_ar\' as local_manager_ar'),
+          db.raw('data->\'recommendations\' as recommendations'),
+          db.raw('data->\'recommendations_ar\' as recommendations_ar'),
           db.raw('data->\'status\' as status'));
 
       if (!req.auth.isAuthenticated) {
